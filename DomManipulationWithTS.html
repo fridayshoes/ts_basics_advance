@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation - TypeScript</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 600px;
+        margin: 0 auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      div {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>DOM Manipulation with TypeScript</h1>
+
+      <div id="myText">Original Text</div>
+      <div class="myClass">Class Text 1</div>
+      <div class="myClass">Class Text 2</div>
+
+      <button onclick="changeText()">Change Text</button>
+    </div>
+
+    <script>
+      // Function to change the text of HTML elements
+      function changeText() {
+        // Get the element by id
+        var element = document.getElementById("myText");
+
+        // Change the text of the element
+        if (element) {
+          element.innerText = "Text changed using TypeScript!";
+        }
+
+        // Get the elements by class name
+        var elements = document.getElementsByClassName("myClass");
+
+        // Change the text of the elements
+        for (var i = 0; i < elements.length; i++) {
+          var el = elements[i];
+          el.innerText = "Text changed for class elements!";
+        }
+      }
+    </script>
+  </body>
+</html>
